@@ -38,8 +38,8 @@ class UserPosts(generic.ListView):
             return context
         
 
-class PostDetail(SelectRelatedMixin,generic.DeleteView):
-    models = models.Post
+class PostDetail(SelectRelatedMixin,generic.DetailView):
+    model = models.Post
     select_related = ('user','group')
 
     def get_queryset(self):
